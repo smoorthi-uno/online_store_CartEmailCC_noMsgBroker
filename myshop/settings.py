@@ -16,7 +16,6 @@ from braintree import Configuration, Environment
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = 'w#c2p$9qpf@+%_f14c9g1%4lm*o0s2ht^*+4mx^77l($)l!1!6'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -44,14 +42,13 @@ INSTALLED_APPS = [
     'payment.apps.PaymentConfig',
 ]
 
-
 # Replace 'user' with your gmail account name for django apps
 # replace 'password' with the password for your gmail account for django apps
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'user'
-EMAIL_HOST_PASSWORD = 'password'
-EMAIL_PORT = '2525'
-
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mswproject.uno@gmail.com'
+EMAIL_HOST_PASSWORD = 'MswUno@22'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,7 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
@@ -94,7 +90,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
@@ -114,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
@@ -128,7 +122,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
@@ -137,17 +130,12 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
 CART_SESSION_ID = 'cart'
 
-
-
-
 # Braintree settings - replace with your credentials after signing up for braintree account
-BRAINTREE_MERCHANT_ID = 'Merchant ID'  # Merchant ID
-BRAINTREE_PUBLIC_KEY = 'Public Key'   # Public Key
-BRAINTREE_PRIVATE_KEY = 'Private key'  # Private key
-
+BRAINTREE_MERCHANT_ID = 'x266wv5m8qxscksg'  # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'ngrr3crrm9456htt'  # Public Key
+BRAINTREE_PRIVATE_KEY = 'c525ce24b2ea95892537d60d429b8cf0'  # Private key
 
 Configuration.configure(
     Environment.Sandbox,
@@ -155,6 +143,5 @@ Configuration.configure(
     BRAINTREE_PUBLIC_KEY,
     BRAINTREE_PRIVATE_KEY
 )
-
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
